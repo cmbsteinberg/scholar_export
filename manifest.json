@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Google Scholar Toolkit",
+  "version": "0.3",
+  "description": "A set of tools to make using Google Scholar easier",
+  "icons": {
+   "128": "download_icon.png"
+  },
+  "action": {
+    "default_title": "Manage Google Scholar"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://scholar.google.com/*"],
+      "js": ["filters.js", "saving.js", "filter_buttons.js", "save_buttons.js", "content.js"]
+    }
+  ]
+}
